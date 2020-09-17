@@ -34,7 +34,7 @@
       [userA@login2 ~]$ id
       uid=10856(userA) gid=1234(mygroup) groups=1234(mygroup),1235(othergroup)
       ```
-      > In the output of the `id` command, you can see your **primary group** after the `gid=`, in this case `mygroup`. Other groups are listed after that in the `groups=` section, showing that this user is also in the `othergroup`.
+      > In the output of the `id` command, you can see your **primary group** after the `gid=`, in this example, `mygroup`. Other groups are listed after that in the `groups=` section, showing that this user is also in the `othergroup`.
 1. Let’s make a directory to put some data in: `mkdir cli_demo`
 1. Now what’s there? `ls –l`
    1. Linux commands usually have flags to change how they work
