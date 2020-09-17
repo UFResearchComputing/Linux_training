@@ -1,4 +1,4 @@
-# An Introduction to the Linux Command Line
+# An Introduction to the Linux Command Line ![UFRC logo](images/ufrc_logo.png)
 
 *Last updated: September 17, 2020*
 
@@ -18,15 +18,23 @@
 
 ## Learning by Doing
 
-(Note: some of the data and examples are taken from [software- carpentry.org](https://swcarpentry.github.io/shell-novice/)):
+(Note: some of the data and examples are taken from [software-carpentry.org](https://swcarpentry.github.io/shell-novice/)):
 
 1. Connect to HiPerGator:
-   1. *Mac*:  `ssh <gatorlink>@hpg.rc.ufl.edu`
+   1. *Mac*:  `ssh <gatorlink>@hpg.rc.ufl.edu`   (where `<gatorlink>` is your GatorLink username)
+       > For additional help, watch the video tutorial on logging in with from a Mac [![Play icon with link to video tutorial](images/play_icon.png)](https://mediasite.video.ufl.edu/Mediasite/Play/0b238bfffb684fd6b7306129af63a6711d)
    1. *Windows*: hostname: `hpg.rc.ufl.edu`
-   1. Type your password and hit return (no characters display while you type).
+      > For additional help, watch the video tutorial on logging in with from Windows [![Play icon with link to video tutorial](images/play_icon.png)](https://mediasite.video.ufl.edu/Mediasite/Play/2bf4c860f19b48a593fb581018b813a11d)
+   1. Note that on both Mac and Windows, when you are typing your password, no characters display while you type. Just keep typing, and hit Enter and you should be logged in.
 1. Where are you when you login? `pwd`
 1. What files are there? `ls`
-1. At Research Computing, we ask that users keep most of their data in the `/blue` folder. Let’s cd there: `cd /blue/<group>/<username>` (replace group with your PI’s group and username with your GatorLink)
+1. At Research Computing, we ask that users keep most of their data in the `/blue` folder. Let’s change directories there: `cd /blue/<group>/<username>` (replace group with your PI’s group and username with your GatorLink)
+   1. You can see your primary group by typing the `id` command:
+      ```bash
+      [userA@login2 ~]$ id
+      uid=10856(userA) gid=1234(mygroup) groups=1234(mygroup),1235(othergroup)
+      ```
+      > In the output of the `id` command, you can see your **primary group** after the `gid=`, in this case `mygroup`. Other groups are listed after that in the `groups=` section, showing that this user is also in the `othergroup`.
 1. Let’s make a directory to put some data in: `mkdir cli_demo`
 1. Now what’s there? `ls –l`
    1. Linux commands usually have flags to change how they work
@@ -38,13 +46,15 @@
 
    1. Note the `-r` to recursively copy, since `cp` won’t copy directories by default
    1. Also note the “`.`” at the end to copy the molecules directory to your current location.
+       > The `molecules` folder of files is also available in this repository at `data/molecules`. This folder originated from the [software-carpentry Shell Training materials](https://swcarpentry.github.io/shell-novice/).
+
 1. Check that the copy worked: `ls`
-1. cd into the molecules directory: cd molecules
+1. Change directories into the molecules directory: `cd molecules`
 1. Look at these files with `more`, `cat`, `head`, `tail`:
    1. `more propane.pdb` and  `cat propane.pdb`
    1. `head propane.pdb`    or    `head –n2 propane.pdb`
    1. `tail propane.pdb`    or    `tail –n2 propane.pdb`
-1. **Redirects**: You can redirect the output of a command to a file with the `>` character. **Caution: This erases the file first.** You can append to a file with `>>`
+1. **Redirects**: You can redirect the output of a command to a file with the `>` character. *Caution: This erases the file first.* You can append to a file with `>>`.
    1. `wc -l *.pdb > lengths.txt`
    1. Let’s see what this file looks like: `cat lengths.txt`
 1. **Sorting**: We might want the lengths sorted: `sort -n lengths.txt`
