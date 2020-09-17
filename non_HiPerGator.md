@@ -4,7 +4,7 @@
 
 *Last updated: September 17, 2020*
 
-> This version of the handout is for users who do not have a HiPerGator account. It uses the free [repl.it](https://repl.it) service to run the examples.
+> This version of the handout is for users who do not have a HiPerGator account. It uses the free [repl.it](https://repl.it) service to run the examples. These instructions *should* work in most Bash environments, so you do not need to use repl.it, it is offered as a suggestion.
 
 ## Getting Around in Linux
 
