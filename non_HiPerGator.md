@@ -1,14 +1,14 @@
 # An Introduction to the Linux Command Line ![UFRC logo](images/ufrc_logo.png)
 
+**Non-HiPerGator version**
+
 *Last updated: September 17, 2020*
 
-## About this training module
-
-This module assumes that you have a HiPerGator account. If you do not have a HiPerGator account, you can [follow along using this version of the training](non-HiPerGator.md) that uses a free, web-based Bash shell.
+> This version of the handout is for users who do not have a HiPerGator account. It uses the free [repl.it](https://repl.it) service to run the examples.
 
 ## Getting Around in Linux
 
-* File paths (directories or folders): `/`, `/home/<gatorlink>/`, `/blue/<group>/<gatorlink>/`
+* File paths (directories or folders): `/`, `/home/runner/`, `/home/runner/<crazy_name>/`
 * `pwd`, `cd`, `ls`  (Where am I, change directory, list directory)
 * `cp`, `mv`, `rm`  (copy, move, delete)
 * `more`, `less`, `head`, `tail`, `cat`  (examine files)
@@ -24,21 +24,16 @@ This module assumes that you have a HiPerGator account. If you do not have a HiP
 
 (Note: some of the data and examples are taken from [software-carpentry.org](https://swcarpentry.github.io/shell-novice/)):
 
-1. Connect to HiPerGator:
-   1. *Mac*:  `ssh <gatorlink>@hpg.rc.ufl.edu`   (where `<gatorlink>` is your GatorLink username)
-       > For additional help, watch the video tutorial on logging in with from a Mac [![Play icon with link to video tutorial](images/play_icon.png)](https://mediasite.video.ufl.edu/Mediasite/Play/0b238bfffb684fd6b7306129af63a6711d)
-   1. *Windows*: hostname: `hpg.rc.ufl.edu`
-      > For additional help, watch the video tutorial on logging in with from Windows [![Play icon with link to video tutorial](images/play_icon.png)](https://mediasite.video.ufl.edu/Mediasite/Play/2bf4c860f19b48a593fb581018b813a11d)
-   1. Note that on both Mac and Windows, when you are typing your password, no characters display while you type. Just keep typing, and hit Enter and you should be logged in.
+1. Connect to a repl.it Bash server:
+   1. Navigate to [https://repl.it/](https://repl.it/)
+   1. Click on the `<> Start coding` button
+   1. In the Create new repl Language selection window, type "Bash", select that, and click Creat repl.
+   1. When the repl opens, for the most part we will focus on the command prompt on the right-hand side. You can resize that pane to get some more room to work.
+   1. Copy and paste (*you will probably need to use right-click to paste*) this command to get a copy of these notes and the data for the exercise: `git clone https://github.com/UFResearchComputing/Linux_training.git`
+
 1. Where are you when you login? `pwd`
 1. What files are there? `ls`
-1. At Research Computing, we ask that users keep most of their data in the `/blue` folder. Let’s change directories there: `cd /blue/<group>/<username>` (replace group with your PI’s group and username with your GatorLink)
-   1. You can see your primary group by typing the `id` command:
-      ```bash
-      [userA@login2 ~]$ id
-      uid=10856(userA) gid=1234(mygroup) groups=1234(mygroup),1235(othergroup)
-      ```
-      > In the output of the `id` command, you can see your **primary group** after the `gid=`, in this example, `mygroup`. Other groups are listed after that in the `groups=` section, showing that this user is also in the `othergroup`.
+
 1. Let’s make a directory to put some data in: `mkdir cli_demo`
 1. Now what’s there? `ls –l`
    1. Linux commands usually have flags to change how they work
@@ -46,11 +41,11 @@ This module assumes that you have a HiPerGator account. If you do not have a HiP
 1. Change into cli_demo directory: `cd cli_demo` or `cd cl<tab>`
 1. Copy some demo data here (`.`):
 
-    `cp -r /data/training/LinuxCLI/molecules .`
+    `cp -r ../Linux_training/data/molecules .`
 
    1. Note the `-r` to recursively copy, since `cp` won’t copy directories by default
    1. Also note the “`.`” at the end to copy the molecules directory to your current location.
-       > The `molecules` folder of files is also available in this repository at `data/molecules`. This folder originated from the [software-carpentry Shell Training materials](https://swcarpentry.github.io/shell-novice/).
+       > You could use the copy in the repository you cloned, but this keeps the directions in parallel with the directions for users on HiPerGator and practices the `mkdir` and `cp` commands. This folder originated from the [software-carpentry Shell Training materials](https://swcarpentry.github.io/shell-novice/).
 
 1. Check that the copy worked: `ls`
 1. Change directories into the molecules directory: `cd molecules`
