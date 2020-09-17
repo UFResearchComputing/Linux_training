@@ -4,7 +4,7 @@
 
 ## About this training module
 
-This module assumes that you have a HiPerGator account. If you do not have a HiPerGator account, you can [follow along using this version of the training](non-HiPerGator.md) that uses a free, web-based Bash shell.
+This module assumes that you have a HiPerGator account. If you do not have a HiPerGator account, you can [follow along using this version of the training](non_HiPerGator.md) that uses a free, web-based Bash shell.
 
 ## Getting Around in Linux
 
