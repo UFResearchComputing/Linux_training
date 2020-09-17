@@ -73,8 +73,8 @@
     ```bash
     for molecule in *.pdb
     do
-    echo $molecule
-    grep ATOM $molecule | awk '{print $3}' | sort | uniq
+      echo $molecule
+      grep ATOM $molecule | awk '{print $3}' | sort | uniq
     done
     ```
 
