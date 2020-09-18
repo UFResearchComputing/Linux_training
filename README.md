@@ -8,6 +8,8 @@
 
 This training module assumes that you have a HiPerGator account. If you do not have a HiPerGator account, you can [follow along using this version of the training](non_HiPerGator.md) which uses a free, web-based Bash shell.
 
+Click the Zoom logo to view a recording of a training session using this material: [![Zoom logo with link to recording](images/ZoomLogo.png)](https://ufl.zoom.us/rec/share/QbSQ2sKs4pu-SCwIS4kmaLDPYt2lnFQBdQnTU3gtGomToV59Lquw7GeM-FxMsq2B.Egl9IV74yH-obfO1?startTime=1600352866000)
+
 ## Getting Around in Linux
 
 * File paths (directories or folders): `/`, <code>/home/<i>gatorlink</i>/</code>, <code>/blue/<i>group</i>/<i>gatorlink</i></code>
