@@ -1,8 +1,8 @@
-# An Introduction to the Linux Command Line 
+# An Introduction to the Linux Command Line
 
 ![UFRC logo](images/ufrc_logo.png)
 
-*Last updated: September 18, 2020*
+*Last updated: January 28, 2021*
 
 ## About this training module
 
