@@ -4,9 +4,9 @@
 
 **Non-HiPerGator version**
 
-*Last updated: January 28, 2021*
+*Last updated: Spetember 8, 2021*
 
-> This version of the handout is for users who do not have a HiPerGator account. It uses the free [repl.it](https://repl.it) service to run the examples. These instructions *should* work in most Bash environments, so you do not need to use repl.it, it is offered as a suggestion.
+> This version of the handout is for users who do not have a HiPerGator account. It uses the free [replit.com](https://replit.com/)) service to run the examples. You do need a replit.com These instructions *should* work in most Bash environments, so you do not need to use replit.com, it is offered as a suggestion.
 
 ## Getting Around in Linux
 
@@ -31,13 +31,19 @@
 (Note: some of the data and examples are taken from [software-carpentry.org](https://swcarpentry.github.io/shell-novice/)):
 
 1. Connect to a repl.it Bash server:
-   1. Navigate to [https://repl.it/](https://repl.it/)
+   1. Navigate to [https://replit.com/](https://replit.com/)
    1. Click on the `<> Start coding` button
    1. In the Create new repl Language selection window, type "Bash", select that, and click Create repl.
    1. When the repl opens, for the most part we will focus on the command prompt on the right-hand side. You can resize that pane to get some more room to work.
    1. Copy and paste (*you will probably need to use right-click to paste*) this command to get a copy of these notes and the data for the exercise: `git clone https://github.com/UFResearchComputing/Linux_training.git`
 
 1. Where are you when you login? `pwd`
+   1. The replit paths are a bit different. As an example, I see:
+        ```
+        > pwd
+        /home/runner/WarlikeBeneficialAutoresponder
+        >
+       ```
 1. What files are there? `ls`
 
 1. Let’s make a directory to put some data in: `mkdir cli_demo`
@@ -59,24 +65,28 @@
    1. `more propane.pdb` and  `cat propane.pdb`
    1. `head propane.pdb`    or    `head -n2 propane.pdb`
    1. `tail propane.pdb`    or    `tail -n2 propane.pdb`
-1. **Redirects**: You can redirect the output of a command to a file with the `>` character (see below for more information about STDIN, STDOUT and STDERR). *Caution: This erases the file you are redirecting to first if it exists, replacing it with the new contents.* **You can *append* to a file with `>>`**.
-   1. As an example, we can get the lengths, in number of lines, of all the files ending in `.pdb` using the wildcard `*` and redirect the output to a file: `wc -l *.pdb > lengths.txt`
+1. **Redirects**: You can redirect the output of a command to a file with the "`>`" character (see below for more information about STDIN, STDOUT and STDERR). 
+  
+   >***Caution**: Redirection with "`>`" first erases the file you are redirecting to if it exists, replacing it with the new contents.* **You can *append* to a file with "`>>`"**.
+
+   1. As an example, we can get the lengths, in number of lines, of all the files ending in "`.pdb`" using the wildcard "`*`" and redirect the output to a file: `wc -l *.pdb > lengths.txt`
    1. Let’s see what this file looks like: `cat lengths.txt`
    > Wildcard expansion (e.g. `*.pdb`) is a convenient way to operate on a list of files matching some characteristic: e.g. having the `.pdb` ending, starting with "p" (`p*`), etc. The wildcard is evaluated and the list of matching files is passed into the command.
 1. **Sorting**: We might want the lengths sorted: `sort -n lengths.txt`
    1. What happens without the `-n`?
-1. `Pipes`: We can connect commands together by piping the output from one command into the input for the next command using the vertical bar character "`|`":
-   >The pipe character, "`|`", is typically located above the Enter-key on your keyboard with the "`\`" and is accessed with the Shift-key
+
+1. **Pipes**: We can connect commands together by piping the output from one command into the input for the next command using the vertical bar character "`|`":
+   >The pipe character, "`|`", is typically located above the Enter-key on US keyboards with the "`\`" and is accessed with the Shift-key
    1. `wc -l *.pdb | sort -n > lengths.txt`
    1. Or if we only want to know the shortest file: `wc -l *.pdb | sort -n | head -n1`
-   > **Why this works**: Most Linux programs can take input from what is called "standard in", often abbreviated as "STDIN". In addition, they typically have *two* output streams, "standard out", "STDOUT", and "standard error", "STDERR"--both of which print to the screen by default, but can be redirected as we saw above (in fact we only redirect STDOUT with the `>`; any STDERR would still print to the screen).
+   > **Why this works**: Most Linux programs can take input from what is called "standard in", often abbreviated as "STDIN". In addition, they typically have *two* output streams, "standard out", "STDOUT", and "standard error", "STDERR"--both of which print to the screen by default, but can be redirected as we saw above (in fact we only redirect STDOUT with the "`>`"; any STDERR would still print to the screen).
    >
    > So, while you can run a command like `wc -l propane.pdb`, you can also get the same result by running the `cat` command and "piping" the STDOUT of that to the STDIN of `wc`: `cat propane.pdb | wc -l`. Similarly, you can keep piping commands connecting the output of one command to the input for the next command.
-1. **`grep`**: We can search for text using grep:
+1. **grep**: We can search for text using `grep`:
    1. `grep ATOM propane.pdb`
 1. *`awk:`* `awk` can do a lot, but one thing it’s good it is pulling out columns from files, in this case the 3rd column:
    1. `grep ATOM propane.pdb | awk '{print $3}'`
-1. *`uniq`*: `uniq` is a command to find unique entries in a **sorted** list:
+1. **uniq**: `uniq` is a command to find unique entries in a **sorted** list:
    `grep ATOM propane.pdb | awk '{print $3}' | sort | uniq`
 1. **Loops**: One of the great things about the command line is the ability to automate repetitive tasks. Let’s say we want to verify that all our molecules are hydrocarbons (made up of only C and H atoms). Below is what the loop looks like neatly spaced out as if it were in a script:  
 
@@ -91,14 +101,16 @@
    As we type this in on the command line, once you hit the Enter-key at the end of the first line, Bash gives you the continuation prompt, "`>`", essentially telling you that you have started a command (a for loop), but not finished it:
   
    ```bash
-   [user@login1 molecules]$ for molecule in *.pdb
+   > for molecule in *.pdb
    >
    ```
+
+   > **Note:** In replit.com, the Bash prompt is a symbol very similar to the `>` sign. I can't replicate that symbol here and have used the `>` for the Bash prompt. Thus the Bash and continuation prompts look identical in these notes, but hopefully you will see a difference.
 
    You can keep typing the rest of the lines, so that it looks like this:
 
    ```bash
-   [user@login1 molecules]$ for molecule in *.pdb
+   > for molecule in *.pdb
    > do
    > echo $molecule
    > grep ATOM $molecule | awk '{print $3}' | sort | uniq
