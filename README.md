@@ -8,7 +8,7 @@
 
 This training module assumes that you have a HiPerGator account. If you do not have a HiPerGator account, you can [follow along using this version of [the training](non_HiPerGator.md), which uses a free, web-based Bash shell.
 
-Click the Zoom logo to view a recording of a training session using this material: [![Zoom logo with link to recording](images/ZoomLogo.png)](https://ufl.zoom.us/rec/share/BIEx1t7vgZVvK6FTQatN-zwO-UNN4Tpow7FImOcDbgQXsBHbAe7jv6Wjvzo8t1rf.d06q_-Z7Av7BhbQD?startTime=1631198522000)
+Click the Zoom logo to view a recording of a training session using this material: [![Zoom logo with link to recording](images/ZoomLogo.png)](https://ufl.zoom.us/rec/share/r8k-s4DZ1OBfrNcRKKiD_cw3iwT424NC042kX3dorK40VHpMb7Om7hN1ouOEWZA.Jok4hF68KZcgQyow?startTime=1706197225000)
 
 ## Getting Around in Linux
 
