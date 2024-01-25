@@ -2,11 +2,11 @@
 
 ![UFRC logo](images/ufrc_logo.png)
 
-*Last updated: September 8, 2021*
+*Last updated: January 25, 2024*
 
 ## About this training module
 
-This training module assumes that you have a HiPerGator account. If you do not have a HiPerGator account, you can [follow along using this version of the training](non_HiPerGator.md) which uses a free, web-based Bash shell.
+This training module assumes that you have a HiPerGator account. If you do not have a HiPerGator account, you can [follow along using this version of [the training](non_HiPerGator.md), which uses a free, web-based Bash shell.
 
 Click the Zoom logo to view a recording of a training session using this material: [![Zoom logo with link to recording](images/ZoomLogo.png)](https://ufl.zoom.us/rec/share/BIEx1t7vgZVvK6FTQatN-zwO-UNN4Tpow7FImOcDbgQXsBHbAe7jv6Wjvzo8t1rf.d06q_-Z7Av7BhbQD?startTime=1631198522000)
 
@@ -26,8 +26,8 @@ Click the Zoom logo to view a recording of a training session using this materia
 * **Tab completion**- type part of a path or file name and hit tab-key, the shell will auto-complete for you.
   >Note that this may not work for the group directories in `/blue/` since directories are automounted, meaning that they may not show up, or be able to be tab-completed, until you access the directory.
 * **`history`**: redo something that you did before without retyping (you can also use the :arrow_up: arrow key)
-* **`man`**: getting help. Many built-in Linux applications have **man**ual pages that document their use and options that they have. e.g. `man ls` will bring up the page for the `ls` command, documenting the many options that change how the `ls` command functions.
-  * Another way to get help information about applications is using the name of the application followed by either the `-h` or `--help` flags. Many applications use this convention to provide documentation to users.
+* **`man`**: getting help. Many built-in Linux applications have **man**ual pages that document their use and options. e.g. `man ls` will bring up the page for the `ls` command, documenting the many options that change how the `ls` command functions.
+  * Another way to get help information about an application is using the application's name followed by either the `-h` or `--help` flags. Many applications use this convention to provide documentation to users.
 
 ## Learning by Doing
 
@@ -38,10 +38,10 @@ Click the Zoom logo to view a recording of a training session using this materia
        > For additional help, watch the video tutorial on logging in with from a Mac [![Play icon with link to video tutorial](images/play_icon.png)](https://mediasite.video.ufl.edu/Mediasite/Play/0b238bfffb684fd6b7306129af63a6711d)
    1. *Windows*: hostname: `hpg.rc.ufl.edu`
       > For additional help, watch the video tutorial on logging in with from Windows [![Play icon with link to video tutorial](images/play_icon.png)](https://mediasite.video.ufl.edu/Mediasite/Play/613bb96b08874182b3c56518b42bcffd1d)
-   1. Note that on both Mac and Windows, when you are typing your password, no characters display while you type. Just keep typing, and hit Enter and you should be logged in.
-1. Where are you when you login? `pwd`
+   1. Note that on both Mac and Windows, when you are typing your password, no characters display while you type. Just keep typing, and hit Enter, and you should be logged in.
+1. Where are you when you log in? `pwd`
 1. What files are there? `ls`
-1. At Research Computing, we ask that users keep most of their data in the their group's <code>/blue/<i>group</i>/</code> folder. Let’s change directories there: <code>cd /blue/<i>group</i>/<i>username</i></code>
+1. At Research Computing, we ask that users keep most of their data in their group's <code>/blue/<i>group</i>/</code> folder. Let’s change directories there: <code>cd /blue/<i>group</i>/<i>username</i></code>
    1. You can see your primary group by typing the `id` command:
 
       ```bash
@@ -50,8 +50,8 @@ Click the Zoom logo to view a recording of a training session using this materia
       ```
 
       > In the output of the `id` command, you can see your **primary group** after the `gid=`, in this example, `mygroup`. Other groups, referred to as **secondary groups** are listed after that in the `groups=` section, showing that this user is also in the `othergroup`.
-1. Let’s make a directory to put some data in: `mkdir cli_demo`
-1. Now what’s there? `ls -l`
+1. Let’s make a directory to put some data: `mkdir cli_demo`
+1. Now, what’s there? `ls -l`
    1. Linux commands usually have flags to change how they work
    1. `man`, `-h` or `--help` often give you help
 1. Change into cli_demo directory: `cd cli_demo` or <code>cd cl<b>-Tab-key</b></code>
@@ -59,8 +59,8 @@ Click the Zoom logo to view a recording of a training session using this materia
 
     `cp -r /data/training/LinuxCLI/molecules .`
 
-   1. Note the `-r` to recursively copy, since `cp` won’t copy directories by default
-   1. Also note the “`.`” at the end of the command to copy the molecules directory to your current location--in Linux, "`.`" is short for the current location.
+   1. Note the `-r` to recursively copy, since `cp` won’t copy directories by default.
+   1. Also note the “`.`” at the end of the command. In Linux, "`.`" is short for the current location.
        > The `molecules` folder of files is also available in this repository at `data/molecules`. This folder originated from the [software-carpentry Shell Training materials](https://swcarpentry.github.io/shell-novice/).
 
 1. Check that the copy worked: `ls`
@@ -69,7 +69,7 @@ Click the Zoom logo to view a recording of a training session using this materia
    1. `more propane.pdb` and  `cat propane.pdb`
    1. `head propane.pdb`    or    `head -n2 propane.pdb`
    1. `tail propane.pdb`    or    `tail -n2 propane.pdb`
-1. **Redirects**: You can redirect the output of a command to a file with the "`>`" character (see below for more information about STDIN, STDOUT and STDERR). 
+1. **Redirects**: You can redirect the output of a command to a file with the "`>`" character (see below for more information about STDIN, STDOUT, and STDERR). 
   
    >***Caution**: Redirection with "`>`" first erases the file you are redirecting to if it exists, replacing it with the new contents.* **You can *append* to a file with "`>>`"**.
 
@@ -79,11 +79,11 @@ Click the Zoom logo to view a recording of a training session using this materia
 1. **Sorting**: We might want the lengths sorted: `sort -n lengths.txt`
    1. What happens without the `-n`?
 
-1. **Pipes**: We can connect commands together by piping the output from one command into the input for the next command using the vertical bar character "`|`":
+1. **Pipes**: We can connect commands by piping the output from one command into the input for the next command using the vertical bar character "`|`":
    >The pipe character, "`|`", is typically located above the Enter-key on US keyboards with the "`\`" and is accessed with the Shift-key
    1. `wc -l *.pdb | sort -n > lengths.txt`
    1. Or if we only want to know the shortest file: `wc -l *.pdb | sort -n | head -n1`
-   > **Why this works**: Most Linux programs can take input from what is called "standard in", often abbreviated as "STDIN". In addition, they typically have *two* output streams, "standard out", "STDOUT", and "standard error", "STDERR"--both of which print to the screen by default, but can be redirected as we saw above (in fact we only redirect STDOUT with the "`>`"; any STDERR would still print to the screen).
+   > **Why this works**: Most Linux programs can take input from what is called "standard in", often abbreviated as "STDIN". In addition, they typically have *two* output streams, "standard out", "STDOUT", and "standard error", "STDERR". Both of these print to the screen by default, but can be redirected as we saw above (in fact we only redirect STDOUT with the "`>`"; any STDERR would still print to the screen).
    >
    > So, while you can run a command like `wc -l propane.pdb`, you can also get the same result by running the `cat` command and "piping" the STDOUT of that to the STDIN of `wc`: `cat propane.pdb | wc -l`. Similarly, you can keep piping commands connecting the output of one command to the input for the next command.
 1. **grep**: We can search for text using `grep`:
@@ -109,7 +109,7 @@ Click the Zoom logo to view a recording of a training session using this materia
    >
    ```
 
-   You can keep typing the rest of the lines, so that it looks like this:
+   You can keep typing the rest of the lines so that it looks like this:
 
    ```bash
    [user@login1 molecules]$ for molecule in *.pdb
@@ -119,7 +119,7 @@ Click the Zoom logo to view a recording of a training session using this materia
    > done
    ```
 
-   Once you hit the Enter-key after the "`done`", that completes the for loop and Bash executes it, showing the output.
+   Once you hit the Enter-key after the "`done`", that completes the for loop, and Bash executes it, showing the output.
 
    > If you find yourself stuck in the continuation prompt mode, you can use the key combination `Ctrl-C` to cancel and exit back to the main command prompt. `Ctrl-C` will usually cancel execution of a program in Bash and is a handy key-combination to know!
 
@@ -127,12 +127,24 @@ Click the Zoom logo to view a recording of a training session using this materia
    1. That file is now gone!! There is no undo, no recycle bin or trash can. As soon as you type the command and hit return, the file is gone!
    1. Be careful... but don’t keep everything forever either!
 
+## Test out some of the HiPerGator-Specific Commands
+
+* `slurmInfo`` – Get information on compute resources in your group
+* `blue_quota`, `orange_quota`, `home_quota` – Get information on quotas and use
+* `ncdu` – Calculate and show storage usage by folder. Can take time to calculate—most helpful in /home
+* `showAllocation` – Get information on investments
+
+The commands only work when you have a job running or pending in the queue:
+
+* `jobhtop`, `jobnvtop` – View real-time job performance data 
+* `qos_to_burst`, `qos_to_main` – Move pending jobs to burst/main QOS
+
 ## Additional exercises
 
 * Which molecule has the most H atoms?
 * Make a directory in your `cli_demo` folder and copy the `methane.pdb` file there (preferably without moving from the `molecules` directory)
 * From the `molecules` directory, get the `head` of the `methane.pdb` file in the directory you created above.
 * Change directories to the directory you made above, rename the `methane.pdb` file to `my_methane.pdb`.
-* Edit the `my_methane.pdb` file and put your name as the AUTHOR. I typically recommend the `nano` text editor on the command line for new users: `nano my_methane.pdb` and use the arrow keys to move around. The commands at the bottom of the screen use the Ctrl-key in combination with another key, so `^X` means hold down the Ctrl-key and the X-key at the same time to exit.
+* Edit the `my_methane.pdb` file and put your name as the AUTHOR. I recommend the `nano` text editor on the command line for new users: `nano my_methane.pdb` and use the arrow keys to move around. The commands at the bottom of the screen use the Ctrl-key with another key, so `^X` means holding down the Ctrl-key and the X-key simultaneously to exit.
 * How many ATOMS does methane have?
 * Use an SFTP program to download the molecules folder to your computer
