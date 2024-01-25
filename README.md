@@ -129,12 +129,12 @@ Click the Zoom logo to view a recording of a training session using this materia
 
 ## Test out some of the HiPerGator-Specific Commands
 
-* `slurmInfo`` – Get information on compute resources in your group
+* `slurmInfo` – Get information on compute resources in your group
 * `blue_quota`, `orange_quota`, `home_quota` – Get information on quotas and use
 * `ncdu` – Calculate and show storage usage by folder. Can take time to calculate—most helpful in /home
 * `showAllocation` – Get information on investments
 
-The commands only work when you have a job running or pending in the queue:
+These commands only work when you have a job running or pending in the queue:
 
 * `jobhtop`, `jobnvtop` – View real-time job performance data 
 * `qos_to_burst`, `qos_to_main` – Move pending jobs to burst/main QOS
