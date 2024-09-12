@@ -6,7 +6,9 @@
 
 ## About this training module
 
-This training module assumes that you have a HiPerGator account. If you do not have a HiPerGator account, you can [follow along using this version of [the training](non_HiPerGator.md), which uses a free, web-based Bash shell.
+This version of the training module assumes that you have a HiPerGator account. 
+
+**If you do not have a HiPerGator account**, it is probably better to [use this repository which allows GitHub Codespaces access](https://github.com/UFIT-RC-Linux-Training/Linux_training).
 
 Click the Zoom logo to view a recording of a training session using this material: [![Zoom logo with link to recording](images/ZoomLogo.png)](https://ufl.zoom.us/rec/share/r8k-s4DZ1OBfrNcRKKiD_cw3iwT424NC042kX3dorK40VHpMb7Om7hN1ouOEWZA.Jok4hF68KZcgQyow?startTime=1706197225000)
 
