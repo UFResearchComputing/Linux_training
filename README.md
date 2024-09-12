@@ -6,6 +6,8 @@
 
 ## About this training module
 
+This repository is available at **[bit.ly/ufit-rc_linux](https://bit.ly/ufit-rc_linux)** ![Bitly QR Code to this repo](images/bit.ly_ufit-rc_linux.png)
+
 This version of the training module assumes that you have a HiPerGator account. 
 
 **If you do not have a HiPerGator account**, it is probably better to [use this repository which allows GitHub Codespaces access](https://github.com/UFIT-RC-Linux-Training/Linux_training).
