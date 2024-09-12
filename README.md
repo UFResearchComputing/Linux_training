@@ -6,7 +6,7 @@
 
 ## About this training module
 
-This repository is available at **[bit.ly/ufit-rc_linux](https://bit.ly/ufit-rc_linux)** ![Bitly QR Code to this repo](images/bit.ly_ufit-rc_linux.png)
+This repository is available at **[bit.ly/ufit-rc_linux](https://bit.ly/ufit-rc_linux)** <img alt='Bitly QR Code to this repo' src='images/bit.ly_ufit-rc_linux.png' align='right'>
 
 This version of the training module assumes that you have a HiPerGator account. 
 
