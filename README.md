@@ -1,8 +1,8 @@
 # An Introduction to the Linux Command Line
 
-![UFRC logo](images/ufrc_logo.png)
+![UFIT logo](images/UFIT-Primary-Signature.png)
 
-*Last updated: January 25, 2024*
+*Last updated: September 11, 2024*
 
 ## About this training module
 

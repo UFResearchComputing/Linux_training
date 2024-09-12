@@ -1,17 +1,35 @@
 # An Introduction to the Linux Command Line 
 
-![UFRC logo](images/ufrc_logo.png)
+![UFIT logo](images/UFIT-Primary-Signature.png)
 
 **Non-HiPerGator version**
 
-*Last updated: Spetember 8, 2021*
+*Last updated: September 11, 2024*
 
-> This version of the handout is for users who do not have a HiPerGator account. It uses the free [replit.com](https://replit.com/)) service to run the examples. You do need a replit.com These instructions *should* work in most Bash environments, so you do not need to use replit.com, it is offered as a suggestion.
+> This version of the handout is for users who do not have a HiPerGator account.
+> There are several options you can use. This should mostly work with any computer
+> with a BASH interpreter.
+>
+> There are also several free online tools that work. For example:
+>   * GitHub Codespaces 
+>   * [replit.com](https://replit.com/) 
 
+These instructions are focused on using GitHub Codespaces. You will need a GitHub account to use these instructions. Sign up at [GitHub.com](https://github.com)!
+
+## Important notes:
+
+* **To run in Codespaces, you will need to be using this repository: [https://github.com/UFIT-RC-Linux-Training/Linux_training](https://github.com/UFIT-RC-Linux-Training/Linux_training)**
+* GitHub provides educational Organizations with 3,000 minutes of Codespaces CPU time per month. Anyone can use this repository, but:
+   * Users are limited to 1 Codespace at a time
+   * Users are limited to the 2-core VMs
+   * Idle timeout is 30 minutes
+   * When the 3,000 minutes a month are used up, no more Codespaces will be able to be launched.
+
+> In this documentation, we will use the convention of putting text that needs to be substituted for your specific case in <i>italic font</i>.
+ 
 ## Getting Around in Linux
 
-* File paths (directories or folders): `/`, `/home/runner/`, <code>/home/runner/<i>crazy_name</i>/</code>
-   > In this documentation, we will use the convention of putting text that needs to be substituted for your specific case in <i>italic font</i>.
+* File paths (directories or folders): `/`, `/home/Codespace`, <code>/workspaces/Linux_training</code>
 * `pwd`, `cd`, `ls`  (Where am I, change directory, list directory)
 * `cp`, `mv`, `rm`  (copy, move (also used for rename), delete)
 * `more`, `less`, `head`, `tail`, `cat`  (examine files)
@@ -30,6 +48,15 @@
 
 (Note: some of the data and examples are taken from [software-carpentry.org](https://swcarpentry.github.io/shell-novice/)):
 
+### Option 1: GitHub Codespaces
+1. Login to GitHub.com
+1. Navigate to the repository [https://github.com/UFIT-RC-Linux-Training/Linux_training](https://github.com/UFIT-RC-Linux-Training/Linux_training)
+1. Click the "<> Code" button and select the Codespaces tab:
+
+   ![Screenshot of the Codespaces tab and the button to start a Codespace](images/start_Codespace.png)
+1. Click the "Create Codespace on main" button.
+
+### Option 2: replit.com
 1. Connect to a repl.it Bash server:
    1. Navigate to [https://replit.com/](https://replit.com/)
    1. Click on the `<> Start coding` button
@@ -37,7 +64,9 @@
    1. When the repl opens, for the most part we will focus on the command prompt on the right-hand side. You can resize that pane to get some more room to work.
    1. Copy and paste (*you will probably need to use right-click to paste*) this command to get a copy of these notes and the data for the exercise: `git clone https://github.com/UFResearchComputing/Linux_training.git`
 
+## All options should be similar from here
 1. Where are you when you login? `pwd`
+   1. In Codespaces, it should be `/workspaces/Linux_training`.
    1. The replit paths are a bit different. As an example, I see:
         ```
         > pwd
@@ -53,7 +82,8 @@
 1. Change into cli_demo directory: `cd cli_demo` or <code>cd cl<b>-Tab-key</b></code>
 1. Copy some demo data here (`.`):
 
-    `cp -r ../Linux_training/data/molecules .`
+   * In Codespaces: `cp -r ../data/molecules .`
+   * In replit:  `cp -r ../Linux_training/data/molecules .`
 
    1. Note the `-r` to recursively copy, since `cp` won’t copy directories by default
    1. Also note the “`.`” at the end to copy the molecules directory to your current location.
@@ -101,16 +131,16 @@
    As we type this in on the command line, once you hit the Enter-key at the end of the first line, Bash gives you the continuation prompt, "`>`", essentially telling you that you have started a command (a for loop), but not finished it:
   
    ```bash
-   > for molecule in *.pdb
+   $ for molecule in *.pdb
    >
    ```
 
-   > **Note:** In replit.com, the Bash prompt is a symbol very similar to the `>` sign. I can't replicate that symbol here and have used the `>` for the Bash prompt. Thus the Bash and continuation prompts look identical in these notes, but hopefully you will see a difference.
+   > **Note:** In replit.com, the Bash prompt is a symbol very similar to the `>` sign. 
 
    You can keep typing the rest of the lines, so that it looks like this:
 
    ```bash
-   > for molecule in *.pdb
+   $ for molecule in *.pdb
    > do
    > echo $molecule
    > grep ATOM $molecule | awk '{print $3}' | sort | uniq
@@ -133,4 +163,3 @@
 * Change directories to the directory you made above, rename the `methane.pdb` file to `my_methane.pdb`.
 * Edit the `my_methane.pdb` file and put your name as the AUTHOR. I typically recommend the `nano` text editor on the command line for new users: `nano my_methane.pdb` and use the arrow keys to move around. The commands at the bottom of the screen use the Ctrl-key in combination with another key, so `^X` means hold down the Ctrl-key and the X-key at the same time to exit.
 * How many ATOMS does methane have?
-* Use an SFTP program to download the molecules folder to your computer
